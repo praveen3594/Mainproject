@@ -13,6 +13,40 @@ const router = createRouter({
             name: "VideoStreaming",
             component: () => import("../views/VideoStreaming.vue"),
         },
+
+        {
+            path: '/learn-exercise',
+            name: 'LearnExercise',
+            component: () => import('../views/LearnExercise.vue'),
+        },
+        
+        {
+            path: "/learn/squat",
+            name: "SquatGuide",
+            component: () => import("../views/SquatGuide.vue"),
+        },
+        {
+            path: "/learn/pushup",
+            name: "PushupGuide",
+            component: () => import("../views/PushupGuide.vue"),
+        },
+        {
+            path: "/learn/bicep",
+            name: "BicepGuide",
+            component: () => import("../views/BicepGuide.vue"),
+        },
+
+        {
+            path: "/learn/plank",
+            name: "PlankGuide",
+            component: () => import("../views/PlankGuide.vue"),
+        },
+        {
+            path: "/learn/lunges",
+            name: "LungesGuide",
+            component: () => import("../views/LungesGuide.vue"),
+        },
+
         /*{
             path: "/exercise-selection",
             beforeEnter() {

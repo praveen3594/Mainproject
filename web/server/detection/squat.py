@@ -399,7 +399,7 @@ class SquatDetection:
             )
             cv2.putText(
                 image,
-                f'{str(self.counter)}, {predicted_class.split(" ")[0]}, {str(prediction_probability)}',
+                f'{str(self.counter)}, {predicted_class.split(" ")[0]}',
                 (5, 25),
                 cv2.FONT_HERSHEY_COMPLEX,
                 0.5,

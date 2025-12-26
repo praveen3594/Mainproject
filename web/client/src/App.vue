@@ -8,7 +8,7 @@
     <nav>
       <RouterLink :to="{ name: 'Home' }" class="nav__header">
         
-        <span class="big-text">Fitness Corrector</span>
+        <span class="big-text">Smart Exercise Assistant</span>
 
       </RouterLink>
     </nav>

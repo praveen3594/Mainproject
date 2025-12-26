@@ -417,7 +417,7 @@ class LungeDetection:
             )
             cv2.putText(
                 image,
-                f'{str(self.counter)}, {stage_predicted_class.split(" ")[0]}, {str(stage_prediction_probability)}',
+                f'{str(self.counter)}, {stage_predicted_class.split(" ")[0]}',
                 (5, 30),
                 cv2.FONT_HERSHEY_COMPLEX,
                 0.5,
@@ -429,7 +429,7 @@ class LungeDetection:
             # Display KNEE_OVER_TOE error prediction
             cv2.putText(
                 image,
-                "KNEE_OVER_TOE",
+                "Knee over toe",
                 (145, 12),
                 cv2.FONT_HERSHEY_COMPLEX,
                 0.5,
@@ -439,7 +439,7 @@ class LungeDetection:
             )
             cv2.putText(
                 image,
-                f"{err_predicted_class}, {err_prediction_probability}, {k_o_t_error}",
+                f"{err_predicted_class}, {k_o_t_error}",
                 (135, 30),
                 cv2.FONT_HERSHEY_COMPLEX,
                 0.5,

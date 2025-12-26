@@ -38,7 +38,7 @@ def squat():
                 if form == 1:
                     if per == 0:
                         if knee <= 90 and shoulder > 160:
-                            feedback = "UP"
+                            feedback = "DOWN"
                             if direction == 0:
                                 count += 0.5
                                 direction = 1
@@ -47,7 +47,7 @@ def squat():
                             
                     if per == 100:
                         if shoulder > 160 and knee > 160:
-                            feedback = "DOWN"
+                            feedback = "UP"
                             if direction == 1:
                                 count += 0.5
                                 direction = 0
@@ -58,9 +58,9 @@ def squat():
                 print(count)
                 
                 #Draw Bar
-                #if form==1:
-                if shoulder>160:
-                    form == 1
+                if form==1:
+                #if shoulder>160:
+                    #form == 1
                     #cv2.rectangle(img, (1080, 50), (1100, 380), (0, 255, 0), 3)
                     #cv2.rectangle(img, (1080, int(bar)), (1100, 380), (0, 255, 0), cv2.FILLED)
                     #cv2.putText(img, f'{int(per)}%', (950, 230), cv2.FONT_HERSHEY_PLAIN, 2,
@@ -79,8 +79,8 @@ def squat():
                 
                 #Feedback 
                 
-                cv2.putText(img, feedback, (150, 40 ), cv2.FONT_HERSHEY_PLAIN, 2,
-                            (0, 0, 255), 2)
+                cv2.putText(img, feedback, (120, 40 ), cv2.FONT_HERSHEY_PLAIN, 3,
+                            (0, 0, 255), 3)
 
                 
             # Convert the frame to JPEG format
@@ -89,3 +89,5 @@ def squat():
                 # Yield the frame as a bytes-like object
                 yield (b'--frame\r\n'
                     b'Content-Type: image/jpeg\r\n\r\n' + jpeg.tobytes() + b'\r\n\r\n')
+
+                    

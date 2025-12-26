@@ -170,6 +170,7 @@ const jumpToVideoLocation = (second) => {
     .tab-container {
         padding: 1rem 2rem;
         border: 3px solid var(--primary-color);
+        background-color:rgb(224, 235, 235);
 
         p.main {
             font-size: 1.5rem;
@@ -232,5 +233,6 @@ const jumpToVideoLocation = (second) => {
     .info-color {
         color: rgb(55, 194, 55);
     }
+    
 }
 </style>

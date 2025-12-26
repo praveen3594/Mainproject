@@ -30,7 +30,7 @@ const handleVideoLoad = () => {
  
 <template> 
     <!-- Video Player --> 
-    <p>{{ url }}</p> 
+    <!--<p>{{ url }}</p> -->
     <div class="player" ref="videoContainer"> 
         <video 
             controls 

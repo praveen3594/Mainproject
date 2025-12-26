@@ -190,7 +190,7 @@ class BicepPoseAnalysis:
                 )
                 cv2.putText(
                     frame,
-                    "WEAK PEAK CONTRACTION",
+                    "Weak muscle squeeze",
                     (355, 30),
                     cv2.FONT_HERSHEY_COMPLEX,
                     0.5,
@@ -202,7 +202,7 @@ class BicepPoseAnalysis:
                 self.detected_errors["PEAK_CONTRACTION"] += 1
                 results.append(
                     {
-                        "stage": "peak contraction",
+                        "stage": "Weak muscle squeeze",
                         "frame": frame,
                         "timestamp": timestamp,
                     }
@@ -510,7 +510,7 @@ class BicepCurlDetection:
             # Lean back error
             cv2.putText(
                 image,
-                "Lean-Too-Far-Back",
+                "Straight Back",
                 (165, 12),
                 cv2.FONT_HERSHEY_COMPLEX,
                 0.5,
@@ -521,7 +521,7 @@ class BicepCurlDetection:
             cv2.putText(
                 image,
                 str("ERROR" if self.stand_posture == "L" else "CORRECT")
-                + f", {predicted_class}, {class_prediction_probability}",
+                + f", {predicted_class}",
                 (160, 30),
                 cv2.FONT_HERSHEY_COMPLEX,
                 0.5,

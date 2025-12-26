@@ -38,7 +38,7 @@ def right_curl():
                 if form == 1:
                     if per == 0:
                         if elbow > 160 and shoulder < 40:
-                            feedback = "UP"
+                            feedback = "DOWN"
                             if direction == 0:
                                 count += 0.5
                                 direction = 1
@@ -47,7 +47,7 @@ def right_curl():
                             
                     if per == 100:
                         if elbow < 40 and shoulder < 40:
-                            feedback = "DOWN"
+                            feedback = "UP"
                             if direction == 1:
                                 count += 0.5
                                 direction = 0
@@ -72,8 +72,8 @@ def right_curl():
                 
                 #Feedback 
                 
-                cv2.putText(img, feedback, (150, 40 ), cv2.FONT_HERSHEY_PLAIN, 2,
-                            (0, 0, 255), 2)
+                cv2.putText(img, feedback, (120, 40 ), cv2.FONT_HERSHEY_PLAIN, 3,
+                            (0, 0, 255), 3)
 
                 
             # Convert the frame to JPEG format

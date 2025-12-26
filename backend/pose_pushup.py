@@ -3,6 +3,7 @@ import mediapipe as mp
 import numpy as np
 import PoseModule as pm
 
+'''
 def pushup():
     cap = cv2.VideoCapture(0)
     detector = pm.poseDetector()
@@ -39,7 +40,7 @@ def pushup():
                 if form == 1:
                     if per == 0:
                         if elbow <= 90 and hip > 160:
-                            feedback = "UP"
+                            feedback = "DOWN"
                             if direction == 0:
                                 count += 0.5
                                 direction = 1
@@ -48,7 +49,7 @@ def pushup():
                             
                     if per == 100:
                         if elbow > 160 and shoulder > 40 and hip > 160:
-                            feedback = "DOWN"
+                            feedback = "UP"
                             if direction == 1:
                                 count += 0.5
                                 direction = 0
@@ -83,3 +84,39 @@ def pushup():
                 # Yield the frame as a bytes-like object
                 yield (b'--frame\r\n'
                     b'Content-Type: image/jpeg\r\n\r\n' + jpeg.tobytes() + b'\r\n\r\n')
+
+'''
+
+
+def pushup():
+    cap = cv2.VideoCapture(0)
+    detector = pm.poseDetector()
+    feedback = "Maintain a straight posture"
+    
+    with detector.pose:
+        while True:
+            ret, img = cap.read()
+            img = detector.findPose(img, False)
+            lmList = detector.findPosition(img, False)
+            
+            if len(lmList) != 0:
+                shoulder = detector.findAngle(img, 11, 23, 25)
+                hip = detector.findAngle(img, 23, 25, 27)
+                
+                # Check posture
+                if 160 <= shoulder <= 180 and 160 <= hip <= 180:
+                    feedback = "Good posture"
+                elif hip < 160:
+                    feedback = "Raise your hips"
+                elif hip > 180:
+                    feedback = "Lower your hips"
+                
+                # Display feedback
+                cv2.putText(img, feedback, (120, 40), cv2.FONT_HERSHEY_PLAIN, 3, (0, 0, 255), 3)
+            
+            # Convert the frame to JPEG format
+            ret, jpeg = cv2.imencode('.jpg', img)
+            
+            # Yield the frame as a bytes-like object
+            yield (b'--frame\r\n'
+                   b'Content-Type: image/jpeg\r\n\r\n' + jpeg.tobytes() + b'\r\n\r\n')

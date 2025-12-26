@@ -91,17 +91,21 @@ const uploadToServer = async () => {
  
 <style lang="scss" scoped> 
 .input-section { 
+    margin-top: 70px;
     display: flex; 
     gap: 1rem; 
  
     * { 
         flex: 1; 
     } 
+
+    
  
     .right-container { 
         display: flex; 
         flex-direction: column; 
         width: 100%; 
+        padding-left: 100px;
  
         .exercises-container { 
             display: flex; 
@@ -111,48 +115,59 @@ const uploadToServer = async () => {
             transition: all 0.25s ease-in-out;
  
             .exercise { 
+                font-family: Arial, sans-serif;
                 display: flex; 
+                max-width: 200px;
                 justify-content: center; 
                 align-items: center; 
                 padding: 1rem 0; 
                 flex: 45%; 
-                color: black; 
+                color: #ffffff;
+                border: none; 
                 text-transform: uppercase; 
-                border: 3px solid rgb(0, 128, 255); 
-                border-radius: 20%; 
+                background: linear-gradient(135deg, #4575be, #3e15e3);
+                border-radius: 20px; 
                 cursor: pointer; 
                 transition: all 0.25s ease; 
  
                 &:hover { 
-                    box-shadow: 0 6px 18px 0 rgba(#000, 0.1); 
-                    transform: translateY(-6px); 
+ 
+                    transform: translateY(-6px);
+                    background: linear-gradient(135deg, #4b42d4, #6c63ff);
+                    
+                    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+   
                 } 
  
                 &.active { 
-                    background-color: rgb(0, 128, 255); 
-                    font-weight: 700; 
+                    background: rgb(255, 0, 195); 
+                    font-weight: 800; 
+                    color: #fff;
+                    border: 2px solid #fafafa;
                 } 
             } 
         } 
  
         .process-btn { 
             border: none; 
-            background-color: rgb(0, 128, 255); 
+            background-color: rgb(255, 0, 81); 
             padding: 1.25rem 0; 
-            
+            max-width: 150px;
+            max-height: 70px;
+            margin-left: 130px;
  
             color: whitesmoke; 
             font-size: 1.3rem; 
             font-weight: 700;
             cursor: pointer; 
-            border-radius: 10px; 
+            border-radius: 20px; 
             transition: all 0.25s ease; 
  
             &:hover { 
                 box-shadow: 0 6px 18px 0 rgba(#000, 0.1); 
                 color: rgb(0, 128, 255); 
                 border-color: transparent; 
-                color: rgb(0, 255, 17);
+                color: rgb(0, 200, 255);
                 
                 transform: translateY(-6px); 
                  
