@@ -1,24 +1,9 @@
-
-
-## Project Overview
-
-Welcome to GymJam, a cutting-edge web application designed to enhance your fitness journey and help you achieve your fitness goals. It is your comprehensive companion, providing a diverse range of exercises tailored to target different body parts. With an intuitive user interface and a library of exercise variations, an immersive fitness experience that caters to users of all levels.
-
-## Getting Started
-
-### Prerequisites
+Prerequisites
 
 1. Backend Framework: python >= 3.9, flask, mediapipe
-   - Other Software Dependencies: Package managers (e.g. pip), version control system (e.g. Git)
+   - Other Software Dependencies
 
-2. Client-Side:
-   - Operating System: Windows, macOS, or Linux
-   - Web Browser: Google Chrome, Mozilla Firefox, Safari, Microsoft Edge, or equivalent
-   - Browser Plugins: JavaScript enabled, support for HTML5 and CSS3
-   - Internet Connectivity: Broadband or high-speed internet connection
-
-
-### Installation
+Installation
 
 1. Clone the repository:
 
@@ -87,20 +72,6 @@ MediaPipe is an open-source framework developed by Google that provides a compre
         http://localhost:5000/video_feed_squat
         ```
 
-5. Observe and follow the instructions on the browser for the correct form of exercise.
 
 
-## Customizing and Extending
-
-Feel free to customize the project to implement your strategies and behaviors for extending exercise variations.
-
-You can modify the existing controllers or create new ones.
-1. [PoseModule.py](backend/PoseModule.py) is the base file containing different functions for calculating angle, tracking position, capturing video feed.
-2. [app.py](backend/app.py) uses flask to render captured webcame frames to webpage
-3. [pose_left.py](backend/pose_left.py) calculates and corrects left arm bicep curl
-4. [pose_right.py](backend/pose_right.py) calculates and corrects right arm bicep curl
-5. [pose_pushup.py](backend/pose_pushup.py) calculates and corrects pushup using coordinates from the left side
-6. [pose_squat.py](backend/pose_squat.py) calculates and corrects squat using coordinates from the left side
-
-Additionally, you can explore advanced features provided by [Mediapipe](https://developers.google.com/mediapipe).
 
