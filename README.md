@@ -35,8 +35,6 @@ Installation
 
 ### Mediapipe:
 
-![](assets/pipe.jpeg)
-
 MediaPipe is an open-source framework developed by Google that provides a comprehensive solution for building machine learning (ML) pipelines to process multimedia data, including video, audio, and image streams. It is designed to facilitate the development of real-time perception and processing pipelines, particularly for tasks related to computer vision and media processing.
 
 ## Running the Simulation
@@ -71,6 +69,7 @@ MediaPipe is an open-source framework developed by Google that provides a compre
         ```
         http://localhost:5000/video_feed_squat
         ```
+
 
 
 
